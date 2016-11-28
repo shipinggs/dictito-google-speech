@@ -226,7 +226,7 @@ def listen_print_loop(recognize_stream):
             else:
                 clarity_indication = 'UNCLEAR'
 
-            print('Clarity: {0:.2f}% --- ' + clarity_indication).format(confidence_rating)
+            print('Clarity: {:2.2f}% --- {}' .format(confidence_rating, clarity_indication))
             # Number of words deemed to be said in that utterance
             num_words = len(transcript.split())
 
@@ -247,8 +247,7 @@ def listen_print_loop(recognize_stream):
             else:
                 talking_speed_indication = 'VERY SLOW.'
 
-            # print('Time taken for utterance: {0:.3f}s').format(time_taken)
-            print('Pace (WPM): {0:d} --- ' + talking_speed_indication).format(words_per_minute)
+            print('Pace (WPM): {} --- {}' .format(words_per_minute, talking_speed_indication))
             print('\n')
             # Exit recognition if any of the transcribed phrases could be
             # one of our keywords.
